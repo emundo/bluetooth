@@ -1378,12 +1378,10 @@
 			},
 			
 			createPairSuccess : function(){
-				alert("create Pair Success!");
 				this.success();
 			},
 			
 			createPairError : function(){
-				alert("create Pair Error!");
 				this.error();
 			},
 			
@@ -1402,12 +1400,10 @@
 			},
 			
 			removePairSuccess : function(){
-				alert("remove Pair Success!");
 				this.success();
 			},
 			
 			removePairError : function(){
-				alert("remove Pair Error!");
 				this.error();
 			},
 			

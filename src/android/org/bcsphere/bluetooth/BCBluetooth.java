@@ -28,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -87,6 +88,8 @@ public class BCBluetooth extends CordovaPlugin {
 				bluetoothAPI = (IBluetooth) Class.forName(
 						"org.bcsphere.bluetooth.BluetoothHTC41").newInstance();
 			}
+            
+            cordova.requestPermissions(this, 0, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION  });
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

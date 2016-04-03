@@ -89,7 +89,11 @@ public class BCBluetooth extends CordovaPlugin {
 						"org.bcsphere.bluetooth.BluetoothHTC41").newInstance();
 			}
             
-            cordova.requestPermissions(this, 0, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION  });
+            try {
+                cordova.requestPermissions(this, 0, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION  });
+            } catch (Throwable e) {
+			    // nothing
+		    }
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

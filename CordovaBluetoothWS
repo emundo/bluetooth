@@ -6,7 +6,6 @@
                     <Folder name="bcsphere">
                         <Folder name="bluetooth">
                             <Folder name="tools">
-                                <File name="src\android\org\bcsphere\bluetooth\tools\BluetoothDetection.java" />
                                 <File name="src\android\org\bcsphere\bluetooth\tools\Tools.java" />
                             </Folder>
                             <File name="src\android\org\bcsphere\bluetooth\BCBluetooth.java" />

@@ -38,7 +38,6 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import org.bcsphere.bluetooth.tools.BluetoothDetection;
 import org.bcsphere.bluetooth.tools.Tools;
 
 public class BCBluetooth extends CordovaPlugin {
@@ -71,8 +70,7 @@ public class BCBluetooth extends CordovaPlugin {
 		intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
 		intentFilter.addAction(BluetoothDevice.ACTION_FOUND);
 		myContext.registerReceiver(receiver, intentFilter);
-		sp = myContext.getSharedPreferences("VERSION_OF_API", 1);
-		BluetoothDetection.detectionBluetoothAPI(myContext);
+		sp = myContext.getSharedPreferences("VERSION_OF_API", 0);
 		try {
 			if ((versionOfAPI = sp.getString("API", "no_google"))
 					.equals("google")) {

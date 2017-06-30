@@ -36,6 +36,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.util.Log;
 
 import org.bcsphere.bluetooth.tools.Tools;
@@ -72,19 +73,8 @@ public class BCBluetooth extends CordovaPlugin {
 		myContext.registerReceiver(receiver, intentFilter);
 		sp = myContext.getSharedPreferences("VERSION_OF_API", 0);
 		try {
-			if ((versionOfAPI = sp.getString("API", "no_google"))
-					.equals("google")) {
-            bluetoothAPI = (IBluetooth) Class.forName(
-              "org.bcsphere.bluetooth.BluetoothG43plus")
-            .newInstance();
-			} else if ((versionOfAPI = sp.getString("API", "no_samsung"))
-					.equals("samsung")) {
-				bluetoothAPI = (IBluetooth) Class.forName(
-						"org.bcsphere.bluetooth.BluetoothSam42").newInstance();
-			} else if ((versionOfAPI = sp.getString("API", "no_htc"))
-					.equals("htc")) {
-				bluetoothAPI = (IBluetooth) Class.forName(
-						"org.bcsphere.bluetooth.BluetoothHTC41").newInstance();
+			if (myContext.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+				bluetoothAPI = new BluetoothG43plus();
 			}
             
             try {

@@ -70,6 +70,7 @@
             <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
         </config-file>
 		
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -78,13 +79,8 @@
     <source-file src="src/android/org/bcsphere/bluetooth/BCBluetooth.java" target-dir="src/org/bcsphere/bluetooth" />
 		<source-file src="src/android/org/bcsphere/bluetooth/IBluetooth.java" target-dir="src/org/bcsphere/bluetooth" />
 		<source-file src="src/android/org/bcsphere/bluetooth/BluetoothG43plus.java" target-dir="src/org/bcsphere/bluetooth" />
-    <!--source-file src="src/android/org/bcsphere/bluetooth/BluetoothSam42.java" target-dir="src/org/bcsphere/bluetooth" /-->
-    <!--source-file src="src/android/org/bcsphere/bluetooth/BluetoothHTC41.java" target-dir="src/org/bcsphere/bluetooth" /-->
 		<source-file src="src/android/org/bcsphere/bluetooth/BluetoothSerialService.java" target-dir="src/org/bcsphere/bluetooth" />
 		<source-file src="src/android/org/bcsphere/bluetooth/tools/Tools.java" target-dir="src/org/bcsphere/bluetooth/tools" />
-    
-    <!--source-file src="src/android/org/bcsphere/bluetooth/samsung_ble_sdk_200.jar" target-dir="src/org/bcsphere/bluetooth" /-->
-		<!--source-file src="src/android/org/bcsphere/bluetooth/com.htc.android.bluetooth.le.jar" target-dir="src/org/bcsphere/bluetooth" /-->
     </platform>
    
 

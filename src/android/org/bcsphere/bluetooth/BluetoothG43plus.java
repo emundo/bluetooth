@@ -129,7 +129,7 @@ public class BluetoothG43plus implements IBluetooth{
 		}
 		connectCC.put(deviceAddress, callbackContext);
 		BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(deviceAddress);
-		mBluetoothGatts.put(device.getAddress(), device.connectGatt(mContext, false, mGattCallback));
+		mBluetoothGatts.put(device.getAddress(), device.connectGatt(mContext, false, mGattCallback, BluetoothDevice.TRANSPORT_LE));
 	}
 
 	@Override
